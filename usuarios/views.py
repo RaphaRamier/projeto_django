@@ -6,7 +6,6 @@ from django.contrib import auth, messages
 
 def login(request):
     form = LoginForms()
-
     if request.method == 'POST':
         form = LoginForms(request.POST)
 
@@ -22,7 +21,7 @@ def login(request):
 
         if usuario is not None:
             auth.login(request, usuario)
-            messages.success(request, f'Usuário {nome} logado com sucesso!')
+            messages.success(request, 'Usuário logado com sucesso!')
             return redirect('index')
         else:
             messages.error(request, 'Erro ao efetuar login!')
