@@ -1,5 +1,6 @@
 from pathlib import Path, os
 from dotenv import load_dotenv
+from django.contrib.messages import constants as messages
 
 load_dotenv()
 
@@ -127,9 +128,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Messages
 
-from django.contrib.messages import constants as messages
+
+
 MESSAGE_TAG = {
-    messages.ERRO: ''
+    messages.ERROR: 'danger',
+    messages.SUCCESS: 'success'
 
 
 }
